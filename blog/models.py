@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 # Create your models here.
 
-
+#Pruebas iniciales de modelos. Antonio Miravete 15/01/2020.
 class Rol(models.Model):
     nombre = models.CharField(max_length=50)
     
