@@ -80,12 +80,14 @@ def alumnos_guardar(request):
 
 def pagos(request):
 
-    return render(request,'pagos/administrador.html',{'error':''})
+    objAlumnos = Alumno.objects.all()
+    return render(request,'pagos/form-basic.html',{'error':'','alumnos': objAlumnos})
 
 
 def gastos(request):
 
     return render(request,'gastos/administrador.html',{'error':''})
+
 
 
 def gastos_agregar(request):
@@ -94,3 +96,8 @@ def gastos_agregar(request):
     objGrupos = Grupo.objects.all()
     return render(request,
                   'gastos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
+
+
+def estadisticas(request):
+
+    return render(request,'estadisticas/administrador.html',{'error':''})

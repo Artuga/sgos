@@ -48,7 +48,7 @@ class Alumno(models.Model):
         return self.nombre + "--" + self.nombre;
 
 class Pago(models.Model):
-    fecha = models.DateTimeField(default=timezone.now,editable=False)
+    fecha = models.DateTimeField(default=timezone.now)
     alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=False, null=False)
     monto = models.CharField(max_length=10,blank=False,null=False)
 
