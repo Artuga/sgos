@@ -49,3 +49,7 @@ def main(request):
 
     return render(request,
                   'main/main.html', {'error': '','grados':objGrados,'grupos':objGrupos})
+
+def pagos(request):
+
+    return render(request,'pagos/administrador.html',{'error':''})
