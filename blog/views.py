@@ -70,11 +70,9 @@ def alumnos_guardar(request):
         objAlumno.nombre = nombre
         objAlumno.apellido = apellido
         objAlumno.grado = Grado.objects.get(id=grado)
-        objAlumno.grupo = Grupo.objects.get(id=grupo)
+        objAlumno.grupo = Grupo.objects.get(id=grupo) 
         objAlumno.correo = correo
         objAlumno.direccion = direccion
-
-        print(objAlumno)
 
         objAlumno.save()
 
@@ -83,3 +81,16 @@ def alumnos_guardar(request):
 def pagos(request):
 
     return render(request,'pagos/administrador.html',{'error':''})
+
+
+def gastos(request):
+
+    return render(request,'gastos/administrador.html',{'error':''})
+
+
+def gastos_agregar(request):
+    roles = Rol.objects.all()
+    objGrados = Grado.objects.all()
+    objGrupos = Grupo.objects.all()
+    return render(request,
+                  'gastos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
