@@ -65,9 +65,6 @@ def alumnos_guardar(request):
         correo = request.POST['correo']
         direccion = request.POST['direccion']
 
-        print(grado)
-        print(grupo)
-
         objAlumno = Alumno.objects.create()
 
         objAlumno.nombre = nombre
