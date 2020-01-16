@@ -23,23 +23,32 @@ class DTAlumnos(BaseDatatableView):
 		return q
 
 	def filter_queryset(self, qs):
-		search = self.request.GET.get(u'search[value]', None)
+
+
+		search_global = self.request.POST.get(u'search[value]', None).split("|")
+
+		print("sisisis")
+		print(search_global)
+		search_global = self.request.POST.get(u'search[value]', None).split("|")
+
+		if len(search_global) > 1:
+			if search_global[0] != "" and search_global[0] != "TODOS":
+				qs = qs.filter(grado__id=search_global[0])
+			if search_global[1] != "" and search_global[1] != "TODOS":
+				qs = qs.filter(grupo__id=search_global[1])
 		
-		if search:
-			qs = qs.filter(Q(nombre__icontains=search)|Q(apellido__icontains=search))
 		return qs
 
 	def prepare_results(self, qs):
 		json_data = []
 		for item in qs:
-			print(item)
 			json_data.append({
 				'nombre': str(item.nombre),
-                'apellido': str(item.apellido),
-                'grado': str(item.grado),
-                'grupo': str(item.grupo),
-                'correo': str(item.correo),
-                "direccion": str(item.direccion),
-              
+				'apellido': str(item.apellido),
+				'grado': str(item.grado),
+				'grupo': str(item.grupo),
+				'correo': str(item.correo),
+				"direccion": str(item.direccion),
+			  
 			})
 		return json_data
