@@ -48,4 +48,4 @@ def main(request):
     objGrupos = Grupo.objects.all()
 
     return render(request,
-                  'main/form-basic.html', {'error': '','grados':objGrados,'grupos':objGrupos})
+                  'main/main.html', {'error': '','grados':objGrados,'grupos':objGrupos})

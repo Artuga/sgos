@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.conf.urls import url,include
 from . import views
+from .datatables_views import *
 
 urlpatterns = [
 
@@ -24,5 +25,9 @@ urlpatterns = [
     url(r'^login/$', views.login_page, name='login_page'),
     url(r'^login/auth$', views.login_user, name='login_user'),
     url(r'^logout/$', views.logout_user, name='logout'),
+
+
+    #main
     url(r'^main/$', views.main, name='main'),
+    url(r'^alumnos/serverside$', DTAlumnos.as_view(), name='DTAlumnos'),
 ]
