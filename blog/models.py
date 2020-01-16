@@ -39,8 +39,8 @@ class Grupo(models.Model):
 class Alumno(models.Model):
     nombre = models.CharField(max_length=50,blank=False, null=False)
     apellido = models.CharField(max_length=50,blank=False, null=False)
-    grado = models.ForeignKey(Grado,on_delete=models.PROTECT,blank=False, null=False)
-    grupo = models.ForeignKey(Grupo,on_delete=models.PROTECT,blank=False, null=False)
+    grado = models.ForeignKey(Grado,on_delete=models.PROTECT,blank=False, null=True)
+    grupo = models.ForeignKey(Grupo,on_delete=models.PROTECT,blank=False, null=True)
     correo = models.CharField(max_length=50,blank=False, null=False)
     direccion = models.CharField(max_length=200,blank=False, null=False)
 

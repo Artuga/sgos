@@ -50,6 +50,39 @@ def main(request):
     return render(request,
                   'main/main.html', {'error': '','grados':objGrados,'grupos':objGrupos})
 
+def alumnos_agregar(request):
+    roles = Rol.objects.all()
+    objGrados = Grado.objects.all()
+    objGrupos = Grupo.objects.all()
+    return render(request,
+                  'alumnos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
+def alumnos_guardar(request):
+    if request.method == 'POST':
+        nombre = request.POST['nombre1']
+        apellido = request.POST['apellido']
+        grado = request.POST['grado']
+        grupo = request.POST['grupo']
+        correo = request.POST['correo']
+        direccion = request.POST['direccion']
+
+        print(grado)
+        print(grupo)
+
+        objAlumno = Alumno.objects.create()
+
+        objAlumno.nombre = nombre
+        objAlumno.apellido = apellido
+        objAlumno.grado = Grado.objects.get(id=grado)
+        objAlumno.grupo = Grupo.objects.get(id=grupo)
+        objAlumno.correo = correo
+        objAlumno.direccion = direccion
+
+        print(objAlumno)
+
+        objAlumno.save()
+
+        return redirect('/blog/main')
+
 def pagos(request):
 
     return render(request,'pagos/administrador.html',{'error':''})
