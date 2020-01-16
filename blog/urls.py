@@ -30,4 +30,7 @@ urlpatterns = [
     #main
     url(r'^main/$', views.main, name='main'),
     url(r'^alumnos/serverside$', DTAlumnos.as_view(), name='DTAlumnos'),
+
+    #pagos
+    url(r'^pagos/$', views.pagos, name='pagos'),
 ]
