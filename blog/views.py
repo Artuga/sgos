@@ -4,6 +4,7 @@ from .models import *
 
 # Create your views here.
 
+
 def index(request):
     return redirect('/blog/login/')
 
@@ -56,6 +57,11 @@ def alumnos_agregar(request):
     objGrupos = Grupo.objects.all()
     return render(request,
                   'alumnos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
+def alumnos_modificar(request):
+
+    return render(request,
+                  'alumnos/modificar.html', {'error': ''})
+
 def alumnos_guardar(request):
     if request.method == 'POST':
         nombre = request.POST['nombre1']
@@ -91,7 +97,7 @@ def gastos(request):
 
 
 def gastos_agregar(request):
-    roles = Rol.objects.all()
+    roles = Rol.objects.all()   
     objGrados = Grado.objects.all()
     objGrupos = Grupo.objects.all()
     return render(request,
