@@ -43,6 +43,10 @@ def logout_user(request):
         return redirect('/blog/main')
 
 def main(request):
+
+    objGrados = Grado.objects.all()
+    
+
     return render(request,
-                  'main/main.html', {'error': ''})
+                  'main/form-basic.html', {'error': '','grados':objGrados})
 
