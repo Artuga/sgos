@@ -45,8 +45,7 @@ def logout_user(request):
 def main(request):
 
     objGrados = Grado.objects.all()
-    
+    objGrupos = Grupo.objects.all()
 
     return render(request,
-                  'main/form-basic.html', {'error': '','grados':objGrados})
-
+                  'main/form-basic.html', {'error': '','grados':objGrados,'grupos':objGrupos})

@@ -325,7 +325,7 @@
                                              <div class="form-group row">
                                                 <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="nombre" name="nombre" >
+                                                    <input type="text" class="form-control" id="nombre1" name="nombre1" >
                                                 </div>
                                             </div>
                                         </div>
@@ -333,7 +333,7 @@
                                             <div class="form-group row">
                                                 <label for="lname" class="col-sm-3 text-right control-label col-form-label">Apellido:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="lname" >
+                                                    <input type="text" class="form-control" id="apellido" name="apellido" >
                                                 </div>
                                             </div>
                                         </div>
@@ -353,10 +353,10 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grado:</label>
+                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grupo:</label>
                                                     <div class="col-sm-9">
                                                         <select id="select" name="select" class="select2 form-control ">
-                                                            {% for i in grados %}
+                                                            {% for i in grupos %}
                                                                 <option value="{{i.id}}">{{i}}</option>
                                                             {% endfor %}
                                                         </select>
@@ -364,8 +364,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
-                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                             <div class="form-group row">
+                                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Correo:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="correo" name="correo" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group row">
+                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Dirección:</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="direccion" name="direccion" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
                                     </div>
                                 <div class="border-top">
