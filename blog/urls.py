@@ -33,6 +33,7 @@ urlpatterns = [
 
     #alumnos
     url(r'^alumnos/agregar/$', views.alumnos_agregar, name='alumnos_agregar'),
+    url(r'^alumnos/modificar/$', views.alumnos_modificar, name='alumnos_modificar'),
     url(r'^alumnos/guardar$', views.alumnos_guardar, name='alumnos_guardar'),
 
     #pagos
