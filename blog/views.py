@@ -125,7 +125,7 @@ def gastos_agregar(request):
     objGrados = Grado.objects.all()
     objGrupos = Grupo.objects.all()
     return render(request,
-                  'gastos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
+                  'gastos/gastos_agregar.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
 
 
 def estadisticas(request):
