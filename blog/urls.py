@@ -44,6 +44,7 @@ urlpatterns = [
 
     #gastos
     url(r'^gastos/$', views.gastos, name='gastos'),
+    url(r'^gastos/serverside$', DTGastos.as_view(), name='DTGastos'),
     url(r'^gastos/agregar$', views.gastos_agregar, name='gastos_agregar'),
     
 

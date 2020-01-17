@@ -81,8 +81,39 @@
                                         </div>
                                
                                     </div>
-                                              <hr>
+                                    <hr>
                                     <h3 class="card-title">Busqueda</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                             <div class="form-group row">
+                                                <label>Fecha Inicio:</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy" id="fechaInicio" name="fechaInicio">
+                                                        <!--:D-->
+                                                            <div class="input-group-append">
+                                                               <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-4">
+                                                 <div class="form-group row">
+                                                    <label>Fecha Fin:</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy" id="fechaFin" name="fechaFin">
+                                                            <!--:D-->
+                                                                <div class="input-group-append">
+                                                                   <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                    </div>
+                                    <hr>
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel">
@@ -91,9 +122,9 @@
                                                     <table id="tabla_codigos_servicios" class="table color-table color-bordered-table inverse-bordered-table table-hover table-striped manage-u-table" style="font-size: 1.0em;">
                                                         <thead>
                                                             <tr>
-                                                                <th>Fecha</th>
-                                                                <th>Monto</th>
-                                                                <th>Descripción</th>                                           
+                                                                <th>Descripción</th>
+                                                                <th>Monto</th>          
+                                                                <th>Fecha</th>                                 
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -179,7 +210,7 @@
                 ],
                 retrieve: true,
                 "ajax": {
-                    "url": "{% url 'blog:DTPagos' %}",
+                    "url": "{% url 'blog:DTGastos' %}",
                     "type": "POST",
                     "data": {
                         'csrfmiddlewaretoken':"{{ csrf_token }}",
@@ -187,13 +218,28 @@
                     },                                
                 },
                 "columns":[
-                    { "data" : "nombre"},
-                    { "data" : "apellido"},
-                    { "data" : "grado"},       
+                    { "data" : "descripcion"},
+                    { "data" : "monto"},
+                    { "data" : "fecha"},       
                     
                 ],
                 "columnDefs": [ ],
                 "order": []
+            });
+            $(document).on('change','#fechaInicio',function(){
+                var list_inputs = [];   
+                list_inputs.push($("#fechaInicio").val());
+                list_inputs.push($("#fechaFin").val());
+
+
+                TCS.search(list_inputs.join('|'), true, false, true).draw();
+            });
+            $(document).on('change','#fechaFin',function(){
+                var list_inputs = [];   
+                list_inputs.push($("#fechaInicio").val());
+                list_inputs.push($("#fechaFin").val());
+
+                TCS.search(list_inputs.join('|'), true, false, true).draw();
             });
         });
 
