@@ -45,11 +45,11 @@ class Alumno(models.Model):
     direccion = models.CharField(max_length=200,blank=False, null=False)
 
     def __str__(self):
-        return self.nombre + "--" + self.nombre;
+        return self.nombre + " " + self.apellido;
 
 class Pago(models.Model):
     fecha = models.DateTimeField(default=timezone.now)
-    alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=False, null=True)
+    alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=True,null=True)
     monto = models.CharField(max_length=10,blank=False,null=False)
 
     def __str__(self):
