@@ -130,11 +130,11 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30">
+           <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/main" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/pagos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Pagos</span></a></li>
-                           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/gastos/agregar" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gastos</span></a></li>
-                        
+                           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/gastos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gastos</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/estadisticas" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Estadisticas</span></a></li>
                         
                     </ul>
                 </nav>
@@ -169,9 +169,8 @@
                             <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/alumnos/guardar">
                             {% csrf_token %}
                                 <div class="card-body">
-                                    <h4 class="card-title">Agregar Pago</h4>
+                                    <h4 class="card-title">Agregar Gasto</h4>
                                     <hr>
-
                                     <div class="row">
                                         <div class="col-md-4">
                                              <div class="form-group row">
@@ -181,7 +180,7 @@
                                   						    <div class="input-group-append">
                                     					       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                   						    </div>
-                            				          </div>
+                            				        </div>
                                                 </div>
                                             </div>    
                                         </div>
@@ -189,7 +188,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group row">
-                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Monto: </label>
+                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Monto:</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" id="montoP" name="montoP" >
                                                 </div>
@@ -197,21 +196,18 @@
                                         </div>
                                      </div>   
                                  </div>
+                           
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-7">
                                             <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Alumno:</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="alumnoP" name="alumnoP" class="select2 form-control ">
-                                                            {% for i in alumnos %}
-                                                                <option value="{{i.id}}">{{i}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                    </div>
+                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Descripción:</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="descipcionG" name="descripcionG" >
+                                                </div>
                                             </div>
                                         </div>
-                                        
-                                    </div>
+                                     </div>   
+                                 </div>
                                     
                                     </div>
                                 <div class="border-top">

@@ -87,6 +87,12 @@ def alumnos_guardar(request):
 def pagos(request):
 
     objAlumnos = Alumno.objects.all()
+    return render(request,'pagos/administrador.html',{'error':'','alumnos': objAlumnos})
+
+
+def agregar_pagos(request):
+
+    objAlumnos = Alumno.objects.all()
     return render(request,'pagos/form-basic.html',{'error':'','alumnos': objAlumnos})
 
 
