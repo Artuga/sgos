@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
+from datetime import datetime,timedelta,date
 from .models import *
 
 # Create your views here.
@@ -94,6 +95,23 @@ def agregar_pagos(request):
 
     objAlumnos = Alumno.objects.all()
     return render(request,'pagos/form-basic.html',{'error':'','alumnos': objAlumnos})
+
+def pagos_guardar(request):
+    if request.method == 'POST':
+        fecha = request.POST['fechaP']
+        alumno = request.POST['alumnoP']
+        monto = request.POST['montoP']
+
+        objPago = Pago.objects.create()
+
+        objPago.fecha = datetime.strptime(fecha, "%m/%d/%Y") 
+        objPago.alumno = Alumno.objects.get(id=alumno)
+        objPago.correo = monto
+
+
+        objPago.save()
+
+        return redirect('/blog/pagos')
 
 
 def gastos(request):

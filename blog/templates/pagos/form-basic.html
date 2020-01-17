@@ -167,7 +167,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/alumnos/guardar">
+                            <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/pagos/guardar">
                             {% csrf_token %}
                                 <div class="card-body">
                                     <h4 class="card-title">Agregar Pago</h4>
@@ -177,7 +177,8 @@
                                              <div class="form-group row">
                                                 <label>Fecha:</label>
                                 					<div class="input-group">
-                                  					    <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                  					    <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy" id="fechaP" name="fechaP">
+                                                        <!--:D-->
                                   						    <div class="input-group-append">
                                     					       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                   						    </div>
@@ -196,8 +197,7 @@
                                             </div>
                                         </div>
                                      </div>   
-                                 </div>
-                                    <div class="row">
+                                      <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group row">
                                                 <label for="select" class="col-sm-3 text-right control-label col-form-label">Alumno:</label>
@@ -212,7 +212,7 @@
                                         </div>
                                         
                                     </div>
-                                    
+                                 </div>
                                     </div>
                                 <div class="border-top">
                                     <div class="card-body">
@@ -317,7 +317,10 @@
 
         });
         /*datwpicker*/
-        jQuery('.mydatepicker').datepicker();
+        jQuery('.mydatepicker').datepicker(
+            format: 'dd-mm-yyyy',
+            autoclose: true,
+            );
         jQuery('#datepicker-autoclose').datepicker({
             autoclose: true,
             todayHighlight: true

@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^pagos/$', views.pagos, name='pagos'),
     url(r'^pagos/agregar$', views.agregar_pagos, name='agregar_pagos'),
     url(r'^pagos/serverside$', DTPagos.as_view(), name='DTPagos'),
+    url(r'^pagos/guardar$', views.pagos_guardar, name='pagos_guardar'),
 
     #gastos
     url(r'^gastos/$', views.gastos, name='gastos'),
