@@ -49,7 +49,7 @@ class Alumno(models.Model):
 
 class Pago(models.Model):
     fecha = models.DateTimeField(default=timezone.now)
-    alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=False, null=False)
+    alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=False, null=True)
     monto = models.CharField(max_length=10,blank=False,null=False)
 
     def __str__(self):

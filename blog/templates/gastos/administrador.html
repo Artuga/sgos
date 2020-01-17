@@ -29,7 +29,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                     <a class="navbar-brand" href="/blog/main">
+                    <a class="navbar-brand" href="/blog/main">
                         <b class="logo-icon p-l-10">
                             <img src="{% static "assets/images/logo-icon.png" %}" alt="logo" /></span>
                            
@@ -53,11 +53,10 @@
                 </div>
             </nav>
         </header>
-            
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
-             <ul id="sidebarnav" class="p-t-30">
+           <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/main" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/pagos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Pagos</span></a></li>
                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/gastos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gastos</span></a></li>
@@ -67,86 +66,47 @@
                 </nav>
             </div>
         </aside>
-
         <div class="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/alumnos/guardar">
-                            {% csrf_token %}
+                            <form class="form-horizontal">
                                 <div class="card-body">
-                                    <h4 class="card-title">Agregar Alumno</h4>
-                                    <hr>
+                                    <h4 class="card-title">Gastos</h4>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                             <div class="form-group row">
-                                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre:</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="nombre1" name="nombre1" >
-                                                </div>
-                                            </div>
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2">
+                                            <button type="button" id="btnAgregar" class="btn btn-primary">Agregar gastos</button>    
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Apellido:</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="apellido" name="apellido" >
-                                                </div>
-                                            </div>
-                                        </div>
+                               
                                     </div>
+                                              <hr>
+                                    <h3 class="card-title">Busqueda</h3>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grado:</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="grado" name="grado" class="select2 form-control ">
-                                                            {% for i in grados %}
-                                                                <option value="{{i.id}}">{{i}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grupo:</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="grupo" name="grupo" class="select2 form-control ">
-                                                            {% for i in grupos %}
-                                                                <option value="{{i.id}}">{{i}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                             <div class="form-group row">
-                                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Correo:</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="correo" name="correo" >
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Dirección:</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="direccion" name="direccion" >
+                                        <div class="col-md-12">
+                                            <div class="panel">
+                                                <div class="table-responsive">
+                                                   
+                                                    <table id="tabla_codigos_servicios" class="table color-table color-bordered-table inverse-bordered-table table-hover table-striped manage-u-table" style="font-size: 1.0em;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Monto</th>
+                                                                <th>Descripción</th>                                           
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    </div>
-                                <div class="border-top">
-                                    <div class="card-body">
-                                        <button type="submit" class="btn btn-primary">Enviar</button>
-                                    </div>
                                 </div>
+                                
                             </form>
                         </div>
             </div>
@@ -155,7 +115,7 @@
             </footer>
         </div>
     </div>
-    
+
     <script src="{% static "assets/libs/jquery/dist/jquery.min.js" %}"></script>
     <script src="{% static "assets/libs/popper.js/dist/umd/popper.min.js" %}"></script>
     <script src="{% static "assets/libs/bootstrap/dist/js/bootstrap.min.js" %}"></script>
@@ -174,10 +134,13 @@
     <script src="{% static "assets/libs/jquery-minicolors/jquery.minicolors.min.js" %}"></script>
     <script src="{% static "assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" %}"></script>
     <script src="{% static "assets/libs/quill/dist/quill.min.js" %}"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'js/axios.min.js' %}"></script>
     <script>
         $(".select2").select2();
-        $('.demo').each(function() {
 
+        $('.demo').each(function() {
         $(this).minicolors({
                 control: $(this).attr('data-control') || 'hue',
                 position: $(this).attr('data-position') || 'bottom left',
@@ -200,6 +163,38 @@
         });
         var quill = new Quill('#editor', {
             theme: 'snow'
+        });
+
+        $(document).ready(function(){ 
+            var TCS = $('#tabla_codigos_servicios').DataTable({
+                serverSide: true,
+                oLanguage: {
+                    sProcessing: '<img src="{% static "images/Preloader.gif" %}" alt="">'
+                },
+                processing : true,
+                buttons: [
+                    {
+            
+                    }
+                ],
+                retrieve: true,
+                "ajax": {
+                    "url": "{% url 'blog:DTPagos' %}",
+                    "type": "POST",
+                    "data": {
+                        'csrfmiddlewaretoken':"{{ csrf_token }}",
+                        'test': "{{request.user.id}}",
+                    },                                
+                },
+                "columns":[
+                    { "data" : "nombre"},
+                    { "data" : "apellido"},
+                    { "data" : "grado"},       
+                    
+                ],
+                "columnDefs": [ ],
+                "order": []
+            });
         });
 
     </script>

@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
+from datetime import datetime,timedelta,date
 from .models import *
 
 # Create your views here.
@@ -87,7 +88,30 @@ def alumnos_guardar(request):
 def pagos(request):
 
     objAlumnos = Alumno.objects.all()
+    return render(request,'pagos/administrador.html',{'error':'','alumnos': objAlumnos})
+
+
+def agregar_pagos(request):
+
+    objAlumnos = Alumno.objects.all()
     return render(request,'pagos/form-basic.html',{'error':'','alumnos': objAlumnos})
+
+def pagos_guardar(request):
+    if request.method == 'POST':
+        fecha = request.POST['fechaP']
+        alumno = request.POST['alumnoP']
+        monto = request.POST['montoP']
+
+        objPago = Pago.objects.create()
+
+        objPago.fecha = datetime.strptime(fecha, "%m/%d/%Y") 
+        objPago.alumno = Alumno.objects.get(id=alumno)
+        objPago.correo = monto
+
+
+        objPago.save()
+
+        return redirect('/blog/pagos')
 
 
 def gastos(request):
@@ -101,7 +125,7 @@ def gastos_agregar(request):
     objGrados = Grado.objects.all()
     objGrupos = Grupo.objects.all()
     return render(request,
-                  'gastos/form-basic.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
+                  'gastos/gastos_agregar.html', {'error': '', 'roles': roles ,'grados':objGrados,'grupos':objGrupos})
 
 
 def estadisticas(request):
