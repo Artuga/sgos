@@ -113,6 +113,23 @@ def pagos_guardar(request):
 
         return redirect('/blog/pagos')
 
+def gastos_guardar(request):
+    if request.method == 'POST':
+        fecha = request.POST['fechaG']
+        monto = request.POST['montoG']
+        descripcion = request.POST['descripcionG']
+
+        objGasto = Gasto.objects.create()
+
+        objGasto.fecha = datetime.strptime(fecha, "%m/%d/%Y") 
+        objGasto.monto = monto
+        objGasto.descripcion = descripcion
+
+
+        objGasto.save()
+
+        return redirect('/blog/gastos')
+
 
 def gastos(request):
 
