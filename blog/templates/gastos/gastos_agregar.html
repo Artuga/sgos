@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/alumnos/guardar">
+                            <form class="form-horizontal form-material" id="loginform" method="post" action="/blog/gastos/guardar">
                             {% csrf_token %}
                                 <div class="card-body">
                                     <h4 class="card-title">Agregar Gasto</h4>
@@ -85,7 +85,7 @@
                                              <div class="form-group row">
                                                 <label>Fecha:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                                        <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy" id="fechaG" name="fechaG">
                                                             <div class="input-group-append">
                                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                                                             </div>
@@ -99,7 +99,7 @@
                                             <div class="form-group row">
                                                 <label for="lname" class="col-sm-3 text-right control-label col-form-label">Monto:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="montoP" name="montoP" >
+                                                    <input type="text" class="form-control" id="montoG" name="montoG" >
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +111,7 @@
                                             <div class="form-group row">
                                                 <label for="lname" class="col-sm-3 text-right control-label col-form-label">Descripción:</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="descipcionG" name="descripcionG" >
+                                                    <input type="text" class="form-control" id="descripcionG" name="descripcionG" >
                                                 </div>
                                             </div>
                                         </div>
