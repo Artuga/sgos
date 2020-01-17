@@ -117,7 +117,7 @@ class DTGastos(BaseDatatableView):
 		json_data = []
 		for item in qs:
 			json_data.append({
-				'alumno': str(item.descripcion),
+				'descripcion': str(item.descripcion),
 				'monto': str(item.monto),
 				'fecha': str(item.fecha.strftime("%d-%m-%Y")),
 			  
