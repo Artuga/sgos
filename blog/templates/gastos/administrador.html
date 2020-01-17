@@ -196,6 +196,11 @@
             theme: 'snow'
         });
 
+
+        $("#btnAgregar").click(function(){
+            document.location = "/blog/gastos/agregar/";
+        });
+
         $(document).ready(function(){ 
             var TCS = $('#tabla_codigos_servicios').DataTable({
                 serverSide: true,
