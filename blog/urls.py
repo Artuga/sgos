@@ -52,5 +52,7 @@ urlpatterns = [
 
 		#Estadisticas
 	url(r'^estadisticas/$', views.estadisticas, name='estadisticas'),
+    url(r'^getPagos$', views.getPagos, name='getPagos'),
+    url(r'^getBalance$', views.getBalance, name='getBalance'),
 
 ]

@@ -56,7 +56,7 @@ class Pago(models.Model):
         return self.monto;
 
 class Gasto(models.Model):
-    fecha = models.DateTimeField(default=timezone.now,editable=False)
+    fecha = models.DateTimeField(default=timezone.now)
     monto = models.CharField(max_length=10,blank=False,null=False)
     descripcion = models.CharField(max_length=300,blank=False,null=False)
 
