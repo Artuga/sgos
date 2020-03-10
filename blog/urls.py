@@ -55,4 +55,23 @@ urlpatterns = [
     url(r'^getPagos$', views.getPagos, name='getPagos'),
     url(r'^getBalance$', views.getBalance, name='getBalance'),
 
+    #usuarios
+    url(r'^usuarios/$', views.usuarios, name='usuarios'),
+    url(r'^usuarios/agregar/$', views.usuarios_agregar, name='usuarios_agregar'),
+    url(r'^usuarios/guardar$', views.usuarios_guardar, name='usuarios_guardar'),
+    url(r'^usuarios/serverside$', DTUsuarios.as_view(), name='DTUsuarios'),
+    url(r'^usuarios/editar/(?P<id_tipo>[-\w]+)$', views.usuarios_editar, name='usuarios_editar'),
+    url(r'^usuarios/editar_usuario/guardar$', views.usuarios_editar_guardar, name='usuarios_editar_guardar'),
+    url(r'^usuarios/eliminar/(?P<id_tipo>[-\w]+)$', views.usuarios_eliminar, name='usuarios_eliminar'),
+
+    #clientes
+    url(r'^clientes/$', views.clientes, name='usuarios'),
+    #url(r'^clientes/agregar/$', views.usuarios_agregar, name='usuarios_agregar'),
+    #url(r'^clientes/guardar$', views.usuarios_guardar, name='usuarios_guardar'),
+    #url(r'^clientes/serverside$', DTUsuarios.as_view(), name='DTUsuarios'),
+    #url(r'^clientes/editar/(?P<id_tipo>[-\w]+)$', views.usuarios_editar, name='usuarios_editar'),
+    #url(r'^clientes/editar_usuario/guardar$', views.usuarios_editar_guardar, name='usuarios_editar_guardar'),
+    #url(r'^clientes/eliminar/(?P<id_tipo>[-\w]+)$', views.usuarios_eliminar, name='usuarios_eliminar'),
+    
+
 ]

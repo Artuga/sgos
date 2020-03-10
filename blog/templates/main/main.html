@@ -1,271 +1,339 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-
-<head>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static "assets/images/favicon.png" %}">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
-    <link rel="stylesheet" type="text/css" href="{% static "assets/libs/select2/dist/css/select2.min.css" %}" >
-    <link rel="stylesheet" type="text/css" href="{% static "assets/libs/jquery-minicolors/jquery.minicolors.css" %}" >
-    <link rel="stylesheet" type="text/css" href="{% static "assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" %}" >
-    <link rel="stylesheet" type="text/css" href="{% static "assets/libs/quill/dist/quill.snow.css" %}" >
-    <link rel="stylesheet" type="text/css" href="{% static "dist/css/style.min.css" %}" >
-</head>
 
-<body>
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-    <div id="main-wrapper">
-        <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                    <a class="navbar-brand" href="/blog/main">
-                        <b class="logo-icon p-l-10">
-                            <img src="{% static "assets/images/logo-icon.png" %}" alt="logo" /></span>
-                           
-                        </b>
-                        <span class="logo-text">
-                            <img src="{% static "assets/images/logo-text.png" %}" alt="logo" /></span>
-                            
-                        </span>
-                    </a>
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
-                </div>
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <ul class="navbar-nav float-right">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static "assets/images/users/1.jpg" %}" alt="logo"  alt="user" class="rounded-circle" width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                
-                                <a class="dropdown-item" href="/blog/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                                
-                            </div>
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+          
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home</a></li>
+                  <li><a  href="/blog/usuarios/"><i class="fa fa-user"></i> Usuarios</a></li>
+                  <!--
+                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="form_validation.html">Form Validation</a></li>
+                      <li><a href="form_wizards.html">Form Wizard</a></li>
+                      <li><a href="form_upload.html">Form Upload</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                    </ul>
+                  </li>
+                    -->
+                    <!--
+                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="general_elements.html">General Elements</a></li>
+                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="icons.html">Icons</a></li>
+                      <li><a href="glyphicons.html">Glyphicons</a></li>
+                      <li><a href="widgets.html">Widgets</a></li>
+                      <li><a href="invoice.html">Invoice</a></li>
+                      <li><a href="inbox.html">Inbox</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
+                    </ul>
+                  </li>
+                    -->
+                    <!--
+                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>
+                  </li>
+                    -->
+                    <!--
+                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                      <li><a href="chartjs2.html">Chart JS2</a></li>
+                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><a href="echarts.html">ECharts</a></li>
+                      <li><a href="other_charts.html">Other Charts</a></li>
+                    </ul>
+                  </li>
+                    -->
+
+                    <!--
+                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                    </ul>
+                  </li>w
+              -->
+                </ul>
+              </div>
+              <!--
+              <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="e_commerce.html">E-commerce</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="project_detail.html">Project Detail</a></li>
+                      <li><a href="contacts.html">Contacts</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="page_403.html">403 Error</a></li>
+                      <li><a href="page_404.html">404 Error</a></li>
+                      <li><a href="page_500.html">500 Error</a></li>
+                      <li><a href="plain_page.html">Plain Page</a></li>
+                      <li><a href="login.html">Login Page</a></li>
+                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1">Level One</a>
+                        </li>
+                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                </div>
-            </nav>
-        </header>
-        <aside class="left-sidebar" data-sidebarbg="skin5">
-            <div class="scroll-sidebar">
-                <nav class="sidebar-nav">
-                <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/main" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Alumnos</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/pagos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Pagos</span></a></li>
-                           <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/gastos" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gastos</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/blog/estadisticas" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Estadisticas</span></a></li>
-                        
-                    </ul>
-                </nav>
+                  </li>                  
+                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                </ul>
+              </div>
+                -->
+
             </div>
-        </aside>
-        <div class="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <form class="form-horizontal">
-                                <div class="card-body">
-                                    <h4 class="card-title">Alumnos</h4>
-                                    <div class="row">
-                                        <div class="col-md-10"></div>
-                                        <div class="col-md-2">
-                                            <button type="button" id="btnAgregar" class="btn btn-primary">Agregar Alumno</button>    
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <hr>
-                                    <h3 class="card-title">Busqueda</h3>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grado:</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="grado" name="grado" class="select2 form-control ">
-                                                            <option value="TODOS">TODOS</option>
-                                                            {% for i in grados %}
-                                                                <option value="{{i.id}}">{{i}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group row">
-                                                <label for="select" class="col-sm-3 text-right control-label col-form-label">Grupo:</label>
-                                                    <div class="col-sm-9">
-                                                        <select id="grupo" name="grupo" class="select2 form-control ">
-                                                            <option value="TODOS">TODOS</option>
-                                                            {% for i in grupos %}
-                                                                <option value="{{i.id}}">{{i}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="panel">
-                                                <div class="table-responsive">
-                                                   
-                                                    <table id="tabla_codigos_servicios" class="table color-table color-bordered-table inverse-bordered-table table-hover table-striped manage-u-table" style="font-size: 1.0em;">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>nombre</th>
-                                                                <th>Apellido</th>
-                                                                <th>Grado</th>
-                                                                <th>Grupo</th>
-                                                                <th>Correo</th>
-                                                                <th>Direccion</th>                                              
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </form>
-                        </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <!--
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
             </div>
-            <footer class="footer text-center">
-               Negocios electrónicos.
-            </footer>
+             -->
+            <!-- /menu footer buttons -->
+          </div>
         </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                  <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">John Doe
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                        <a class="dropdown-item"  href="javascript:;">
+                          <span class="badge bg-red pull-right">50%</span>
+                          <span>Settings</span>
+                        </a>
+                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                      <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                  </li>
+  
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="badge bg-green">6</span>
+                    </a>
+                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <div class="text-center">
+                          <a class="dropdown-item">
+                            <strong>See All Alerts</strong>
+                            <i class="fa fa-angle-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Plain Page</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Plain Page</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      Add content to the page ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
     </div>
-    <script src="{% static "assets/libs/jquery/dist/jquery.min.js" %}"></script>
-    <script src="{% static "assets/libs/popper.js/dist/umd/popper.min.js" %}"></script>
-    <script src="{% static "assets/libs/bootstrap/dist/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "assets/libs/perfect-scrollbar/dist/perfect-scrollbar/jquery.min.js" %}"></script>
-    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
-    <script src="{% static "dist/js/waves.js" %}"></script>
-    <script src="{% static "dist/js/sidebarmenu.js" %}"></script>
-    <script src="{% static "dist/js/custom.min.js" %}"></script>
-    <script src="{% static "assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js" %}"></script>
-    <script src="{% static "dist/js/pages/mask/mask.init.js" %}"></script>
-    <script src="{% static "assets/libs/select2/dist/js/select2.full.min.js" %}"></script>
-    <script src="{% static "assets/libs/select2/dist/js/select2.min.js" %}"></script>
-    <script src="{% static "assets/libs/jquery-asColor/dist/jquery-asColor.min.js" %}"></script>
-    <script src="{% static "assets/libs/jquery-asGradient/dist/jquery-asGradient.js" %}"></script>
-    <script src="{% static "assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js" %}"></script>
-    <script src="{% static "assets/libs/jquery-minicolors/jquery.minicolors.min.js" %}"></script>
-    <script src="{% static "assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" %}"></script>
-    <script src="{% static "assets/libs/quill/dist/quill.min.js" %}"></script>
-    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-    <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
-    <script src="{% static 'js/axios.min.js' %}"></script>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
-    <script>
-        $(".select2").select2();
-        $('.demo').each(function() {
-        $(this).minicolors({
-                control: $(this).attr('data-control') || 'hue',
-                position: $(this).attr('data-position') || 'bottom left',
-
-                change: function(value, opacity) {
-                    if (!value) return;
-                    if (opacity) value += ', ' + opacity;
-                    if (typeof console === 'object') {
-                        console.log(value);
-                    }
-                },
-                theme: 'bootstrap'
-            });
-
-        });
-        jQuery('.mydatepicker').datepicker();
-        jQuery('#datepicker-autoclose').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-
-
-
-        $("#btnAgregar").click(function(){
-            document.location = "/blog/alumnos/agregar/";
-        });
-
-        var TCS = ""
-
-        $(document).ready(function(){ 
-            TCS = $('#tabla_codigos_servicios').DataTable({
-                serverSide: true,
-                oLanguage: {
-                    sProcessing: '<img src="{% static "images/Preloader.gif" %}" alt="">'
-                },
-                processing : true,
-                buttons: [
-                    {
-            
-                    }
-                ],
-                retrieve: true,
-                "ajax": {
-                    "url": "{% url 'blog:DTAlumnos' %}",
-                    "type": "POST",
-                    "data": {
-                        'csrfmiddlewaretoken':"{{ csrf_token }}",
-                        'test': "{{request.user.id}}",
-                    },                                
-                },
-                "columns":[
-                    { "data" : "nombre"},
-                    { "data" : "apellido"},
-                    { "data" : "grado"},
-                    { "data" : "grupo"},
-                    { "data" : "correo"},
-                    { "data" : "direccion"},       
-                    
-                ],
-                "columnDefs": [ ],
-                "order": []
-            });
-        });
-
-
-        $(document).on('change','#grupo',function(){
-            var list_inputs = [];   
-            list_inputs.push($("#grado").val());
-            list_inputs.push($("#grupo").val());
-
-
-            TCS.search(list_inputs.join('|'), true, false, true).draw();
-        });
-        $(document).on('change','#grado',function(){
-            var list_inputs = [];   
-            list_inputs.push($("#grado").val());
-            list_inputs.push($("#grupo").val());
-
-            TCS.search(list_inputs.join('|'), true, false, true).draw();
-
-        });
-        $("#grupo").change()
-        $("#grado").change()
-
-    </script>
-</body>
-
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'build/js/custom.min.js' %}"></script>
+  </body>
 </html>
