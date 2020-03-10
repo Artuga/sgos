@@ -70,7 +70,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Usuarios</h3>
+                <h3>Clientes</h3>
               </div>
 
               <div class="title_right">
@@ -91,21 +91,21 @@
                     <div class="col-md-12 col-sm-12  ">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Eliminar Usuario</h2>
+                                <h2>Eliminar Cliente</h2>
                             
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
 
-                                <form id="form_usuarios" method="post" action="/blog/usuarios/editar_usuario/guardar">{% csrf_token %}
-                                    <input type="text" name="idUsuario" id="idUsuario" value ="{{ obj.id }}" hidden>
+                                <form id="form_usuarios" method="post" action="/blog/clientes/eliminar/ok">{% csrf_token %}
+                                    <input type="text" name="idCliente" id="idCliente" value ="{{ obj.id }}" hidden>
                                         
                                     <div class="row">
                                         <div class="col md-4"></div>
                                         <div class="col md-4">
                                             {% if error %}
                                                 <div class="alert alert-danger" role="alert">
-                                                        <center>Este Usuario no puede ser eliminado, ya que se encuentra en uso activo.</center>
+                                                        <center>Este cliente no puede ser eliminado, ya que se encuentra en uso activo.</center>
                                                 </div>
                                             {% else %}
                                                 <div class="alert alert-danger" role="alert">
@@ -119,14 +119,14 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nombre: </label>
-                                                    <input type="text" id="nombre" name="nombre" required="required" class="form-control" value="{{obj.nombre|default_if_none:''}}" readonly>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Código: </label>
+                                                    <input type="text" id="nombre" name="nombre" required="required" class="form-control" value="{{obj.codigo|default_if_none:''}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Apellido: </label>
-                                                    <input type="text" id="nombre" name="nombre" required="required" class="form-control" value="{{obj.apellido|default_if_none:''}}" readonly>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Razón Social: </label>
+                                                    <input type="text" id="nombre" name="nombre" required="required" class="form-control" value="{{obj.razonsocial|default_if_none:''}}" readonly>
                                             </div>  
                                         </div>
                                     </div>

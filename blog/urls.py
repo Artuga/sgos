@@ -29,31 +29,6 @@ urlpatterns = [
 
     #main
     url(r'^main/$', views.main, name='main'),
-    url(r'^alumnos/serverside$', DTAlumnos.as_view(), name='DTAlumnos'),
-
-    #alumnos
-    url(r'^alumnos/agregar/$', views.alumnos_agregar, name='alumnos_agregar'),
-    url(r'^alumnos/modificar/$', views.alumnos_modificar, name='alumnos_modificar'),
-    url(r'^alumnos/guardar$', views.alumnos_guardar, name='alumnos_guardar'),
-
-    #pagos
-    url(r'^pagos/$', views.pagos, name='pagos'),
-    url(r'^pagos/agregar$', views.agregar_pagos, name='agregar_pagos'),
-    url(r'^pagos/serverside$', DTPagos.as_view(), name='DTPagos'),
-    url(r'^pagos/guardar$', views.pagos_guardar, name='pagos_guardar'),
-
-    #gastos
-    url(r'^gastos/$', views.gastos, name='gastos'),
-    url(r'^gastos/serverside$', DTGastos.as_view(), name='DTGastos'),
-    url(r'^gastos/agregar$', views.gastos_agregar, name='gastos_agregar'),
-    url(r'^gastos/agregar/$', views.gastos_agregar, name='gastos_agregar'),
-    url(r'^gastos/guardar$', views.gastos_guardar, name='gastos_guardar'),
-    
-
-		#Estadisticas
-	url(r'^estadisticas/$', views.estadisticas, name='estadisticas'),
-    url(r'^getPagos$', views.getPagos, name='getPagos'),
-    url(r'^getBalance$', views.getBalance, name='getBalance'),
 
     #usuarios
     url(r'^usuarios/$', views.usuarios, name='usuarios'),
@@ -63,15 +38,16 @@ urlpatterns = [
     url(r'^usuarios/editar/(?P<id_tipo>[-\w]+)$', views.usuarios_editar, name='usuarios_editar'),
     url(r'^usuarios/editar_usuario/guardar$', views.usuarios_editar_guardar, name='usuarios_editar_guardar'),
     url(r'^usuarios/eliminar/(?P<id_tipo>[-\w]+)$', views.usuarios_eliminar, name='usuarios_eliminar'),
+    url(r'^usuarios/eliminar/ok$', views.usuarios_eliminar_ok, name='usuarios_eliminar_ok'),
 
     #clientes
     url(r'^clientes/$', views.clientes, name='usuarios'),
-    #url(r'^clientes/agregar/$', views.usuarios_agregar, name='usuarios_agregar'),
-    #url(r'^clientes/guardar$', views.usuarios_guardar, name='usuarios_guardar'),
-    #url(r'^clientes/serverside$', DTUsuarios.as_view(), name='DTUsuarios'),
-    #url(r'^clientes/editar/(?P<id_tipo>[-\w]+)$', views.usuarios_editar, name='usuarios_editar'),
-    #url(r'^clientes/editar_usuario/guardar$', views.usuarios_editar_guardar, name='usuarios_editar_guardar'),
-    #url(r'^clientes/eliminar/(?P<id_tipo>[-\w]+)$', views.usuarios_eliminar, name='usuarios_eliminar'),
+    url(r'^clientes/agregar/$', views.clientes_agregar, name='clientes_agregar'),
+    url(r'^clientes/guardar$', views.clientes_guardar, name='clientes_guardar'),
+    url(r'^clientes/serverside$', DTClientes.as_view(), name='DTClientes'),
+    url(r'^clientes/editar/(?P<id_tipo>[-\w]+)$', views.clientes_editar, name='clientes_editar'),
+    url(r'^clientes/editar_cliente/guardar$', views.clientes_editar_guardar, name='clientes_editar_guardar'),
+    url(r'^clientes/eliminar/(?P<id_tipo>[-\w]+)$', views.clientes_eliminar, name='usuarios_eliminar'),
     
 
 ]

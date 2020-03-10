@@ -2,6 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import User
 from django.utils import timezone
+from smart_selects.db_fields import ChainedForeignKey
 # Create your models here.
 
 #Pruebas iniciales de modelos. Antonio Miravete 15/01/2020.
@@ -24,44 +25,71 @@ class Usuario(models.Model):
     def __str__(self):
         return self.user.username + "--" + str(self.nombre)
 
-class Grado(models.Model):
-    nombre = models.CharField(max_length=50,blank=False, null=False)
-
+class Estado(models.Model):
+    nombre = models.CharField(max_length=50)
     def __str__(self):
         return self.nombre
 
-class Grupo(models.Model):
-    nombre = models.CharField(max_length=50,blank=False, null=False)
-
+class Ciudad(models.Model):
+    nombre = models.CharField(max_length=150)
+    estado = ChainedForeignKey(
+        Estado,
+        chained_field="pais",
+        chained_model_field="pais",
+        show_all=False,
+        auto_choose=True,
+        on_delete=models.PROTECT,blank=True, null=True
+    )
     def __str__(self):
         return self.nombre
 
-class Alumno(models.Model):
-    nombre = models.CharField(max_length=50,blank=False, null=False)
-    apellido = models.CharField(max_length=50,blank=False, null=False)
-    grado = models.ForeignKey(Grado,on_delete=models.PROTECT,blank=False, null=True)
-    grupo = models.ForeignKey(Grupo,on_delete=models.PROTECT,blank=False, null=True)
-    correo = models.CharField(max_length=50,blank=False, null=False)
-    direccion = models.CharField(max_length=200,blank=False, null=False)
+
+class TipoCliente(models.Model):
+    
+    nombre = models.CharField(max_length=400,blank=True, null= True)
+    creacion = models.DateTimeField(default=timezone.now, editable=False)
 
     def __str__(self):
-        return self.nombre + " " + self.apellido;
+        return str(self.nombre)
 
-class Pago(models.Model):
-    fecha = models.DateTimeField(default=timezone.now)
-    alumno = models.ForeignKey(Alumno, on_delete=models.PROTECT,blank=True,null=True)
-    monto = models.CharField(max_length=10,blank=False,null=False)
+class Cliente(models.Model):
+    
+    codigo = models.CharField(max_length=400,blank=True, null= True)
+    razonsocial = models.CharField(max_length=400,blank=True, null= True)
+    rfc = models.CharField(max_length=400,blank=True, null= True)
+    estado = ChainedForeignKey(
+        Estado,
+        show_all=False,
+        auto_choose=True,
+        on_delete=models.PROTECT,blank=True, null=True
+    )
+    ciudad = ChainedForeignKey(
+        Ciudad,
+        chained_field="estado",
+        chained_model_field="estado",
+        show_all=False,
+        auto_choose=True,
+        on_delete=models.PROTECT,blank=True, null=True
+    )
+    direccioncompleta = models.CharField(max_length=400,blank=True, null= True)
+    calle = models.CharField(max_length=400,blank=True, null= True)
+    numeroexterior = models.CharField(max_length=400,blank=True, null= True)
+    numerointerior = models.CharField(max_length=400,blank=True, null= True)
+    cp = models.CharField(max_length=400,blank=True, null= True)
+    telefono = models.CharField(max_length=400,blank=True, null= True)
+    creacion = models.DateTimeField(default=timezone.now, editable=False)
+    lunes = models.BooleanField(default=False)
+    martes = models.BooleanField(default=False)
+    miercoles = models.BooleanField(default=False)
+    jueves = models.BooleanField(default=False)
+    viernes = models.BooleanField(default=False)
+    sabado = models.BooleanField(default=False)
+    domingo = models.BooleanField(default=False) 
+    tipocliente = models.ForeignKey(TipoCliente, on_delete=models.PROTECT, blank=True, null=True) 
+    email = models.CharField(max_length=400,blank=True, null= True)
+    telefono = models.CharField(max_length=400,blank=True, null= True)
+    representante = models.CharField(max_length=400,blank=True, null= True)
+    nombrecomercialtxt = models.CharField(max_length=400,blank=True, null= True)
 
     def __str__(self):
-        return self.monto;
-
-class Gasto(models.Model):
-    fecha = models.DateTimeField(default=timezone.now)
-    monto = models.CharField(max_length=10,blank=False,null=False)
-    descripcion = models.CharField(max_length=300,blank=False,null=False)
-
-    def __str__(self):
-        return self.monto;    
-
-#python manage.py makemigrations
-#python manage.py migrate
+        return str(self.razonsocial)

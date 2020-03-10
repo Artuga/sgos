@@ -70,7 +70,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Usuarios</h3>
+                <h3>Clientes</h3>
               </div>
 
               <div class="title_right">
@@ -91,7 +91,7 @@
                     <div class="col-md-12 col-sm-12  ">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Administrador de Usuarios</h2>
+                            <h2>Administrador de Clientes</h2>
                         
                             <div class="clearfix"></div>
                         </div>
@@ -111,12 +111,14 @@
                                     <div class="panel">
                                         <div class="table-responsive">
                                            
-                                            <table id="tabla_usuarios" class="table color-table color-bordered-table inverse-bordered-table table-hover table-striped manage-u-table" style="font-size: 1.0em;">
+                                            <table id="tabla_clientes" class="table color-table color-bordered-table inverse-bordered-table table-hover table-striped manage-u-table" style="font-size: 1.0em;">
                                                 <thead>
                                                     <tr>
-                                                        <th>Usuario</th>
-                                                        <th>Nombre</th>
-                                                        <th>Apellido</th>   
+                                                        <th>Codigo</th>
+                                                        <th>Razón Social</th>
+                                                        <th>Estado</th>   
+                                                        <th>Ciudad</th>   
+                                                        <th>Teléfono</th>   
                                                         <th>Opciones</th>                                            
                                                     </tr>
                                                 </thead>
@@ -161,12 +163,12 @@
 
     <script type="text/javascript">
         $("#cmdInsert").click(function(){
-            document.location = "/blog/usuarios/agregar/";
+            document.location = "/blog/clientes/agregar/";
         });
 
         
         $(document).ready(function(){ 
-            var TCS = $('#tabla_usuarios').DataTable({
+            var TCS = $('#tabla_clientes').DataTable({
                 serverSide: true,
                 "searching": false,
                 oLanguage: {
@@ -180,38 +182,24 @@
                 ],
                 retrieve: true,
                 "ajax": {
-                    "url": "{% url 'blog:DTUsuarios' %}",
+                    "url": "{% url 'blog:DTClientes' %}",
                     "type": "POST",
                     "data": {
                         'csrfmiddlewaretoken':"{{ csrf_token }}",
                     },                                
                 },
                 "columns":[
-                    { "data" : "usuario"},
-                    { "data" : "nombre"},
-                    { "data" : "apellido"}, 
+                    { "data" : "codigo"},
+                    { "data" : "razonsocial"},
+                    { "data" : "estado"}, 
+                    { "data" : "ciudad"}, 
+                    { "data" : "telefono"}, 
                     { "data" : "opciones"},        
                     
                 ],
                 "columnDefs": [ ],
                 "order": []
             });
-
-            /*$(document).on('change','#fechaInicio',function(){
-                var list_inputs = [];   
-                list_inputs.push($("#fechaInicio").val());
-                list_inputs.push($("#fechaFin").val());
-
-
-                TCS.search(list_inputs.join('|'), true, false, true).draw();
-            });
-            $(document).on('change','#fechaFin',function(){
-                var list_inputs = [];   
-                list_inputs.push($("#fechaInicio").val());
-                list_inputs.push($("#fechaFin").val());
-
-                TCS.search(list_inputs.join('|'), true, false, true).draw();
-            });*/
         });
 
     </script>

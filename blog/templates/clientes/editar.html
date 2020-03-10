@@ -70,7 +70,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Usuarios</h3>
+                <h3>Clientes</h3>
               </div>
 
               <div class="title_right">
@@ -91,42 +91,110 @@
                     <div class="col-md-12 col-sm-12  ">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Editar Usuario</h2>
+                                <h2>Editar Cliente | Datos Básicos</h2>
                             
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
 
-                                <form id="form_usuarios" method="post" action="/blog/usuarios/editar_usuario/guardar">{% csrf_token %}
-                                    <input type="text" name="idUsuario" id="idUsuario" value ="{{ obj.id }}" hidden>
+                                <form id="form_usuarios" method="post" action="/blog/clientes/editar_cliente/guardar">{% csrf_token %}
+                                    <input type="text" name="idCliente" id="idCliente" value ="{{ obj.id }}" hidden>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Codigo: <span class="required">*</span></label>
+                                                  <input type="text" id="codigo" name="codigo" required="required" value="{{obj.codigo|default_if_none:''}}" class="form-control ">
+                                            </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Razón Social: <span class="required">*</span></label>
+                                                  <input type="text" id="razonsocial" name="razonsocial" required="required" value="{{obj.razonsocial|default_if_none:''}}" class="form-control ">
+                                            </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">RFC: <span class="required">*</span></label>
+                                                  <input type="text" id="rfc" name="rfc" required="required" value="{{obj.rfc|default_if_none:''}}" class="form-control ">
+                                            </div>
+                                      </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nombre: <span class="required">*</span></label>
-                                                    <input type="text" id="nombre" name="nombre" required="required" class="form-control ">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Estado: <span class="required">*</span></label>
+                                                    <input type="text" id="estado" name="estado" required="required"  class="form-control ">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Apellido: <span class="required">*</span></label>
-                                                    <input type="text" id="apellido" name="apellido" required="required" class="form-control ">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Ciudad: <span class="required">*</span></label>
+                                                    <input type="text" id="ciudad" name="ciudad" required="required" class="form-control ">
                                             </div>
                                         </div>
                                     </div>
                                     <br>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Teléfono: <span class="required">*</span></label>
-                                                    <input type="number" id="telefono" name="telefono" required="required" class="form-control ">
-                                            </div>
-                                        </div>
+
                                     </div>
-                                    <div class="pull-right">
-                                        <button type="submit" class="btn btn-success">Guardar</button>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12  ">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Editar Cliente | Datos de Localización</h2>
+                            
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Calle: <span class="required">*</span></label>
+                                              <input type="text" id="calle" name="calle" required="required" value="{{obj.calle|default_if_none:''}}" class="form-control ">
+                                      </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Número Exterior: <span class="required">*</span></label>
+                                              <input type="number" id="nexterior" name="nexterior" required="required" value="{{obj.numeroexterior|default_if_none:''}}" class="form-control ">
+                                      </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Número Interior: <span class="required">*</span></label>
+                                              <input type="number" id="ninterior" name="ninterior" required="required" value="{{obj.numerointerior|default_if_none:''}}" class="form-control ">
+                                      </div>
+                                </div>
+                              </div>  
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Código Postal: <span class="required">*</span></label>
+                                              <input type="text" id="cp" name="cp" required="required" value="{{obj.cp|default_if_none:''}}" class="form-control ">
+                                      </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="item form-group">
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Dirección Completa: <span class="required">*</span></label>
+                                              <input type="text" id="direccion" name="direccion" value="{{obj.direccioncompleta|default_if_none:''}}" required="required" class="form-control ">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="pull-right">
+                                  <button type="submit" class="btn btn-success">Guardar</button>
+                              </div>
                                 </form>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                             </div>
                         </div>
